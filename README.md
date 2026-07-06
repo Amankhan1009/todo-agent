@@ -413,7 +413,7 @@ This prevents the LLM from choosing arbitrary user IDs when calling task-managem
 ### 1. Clone the Repository
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/Amankhan1009/todo-agent.git
 cd Todo-Agent
 ```
 
