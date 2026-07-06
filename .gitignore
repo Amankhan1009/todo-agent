@@ -1,0 +1,8 @@
+.env
+venv/
+__pycache__/
+*.pyc
+database/todo.db
+database/checkpoints.db
+.DS_Store
+.streamlit/
