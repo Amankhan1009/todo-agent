@@ -4,6 +4,7 @@ import streamlit as st
 from langchain_core.messages import AIMessage, HumanMessage
 
 from database.checkpointer import create_checkpointer
+from database.schema import initialize_database
 from graph.builder import build_graph
 from graph.context import TodoContext
 
@@ -112,6 +113,21 @@ def logout() -> None:
 
     st.rerun()
 
+
+# ---------------------------------------------------------
+# Database initialization
+# ---------------------------------------------------------
+
+# Streamlit Community Cloud starts with a fresh filesystem.
+# The SQLite database file may be created automatically, but
+# the tasks table must also be initialized before the agent
+# tries to access it.
+initialize_database()
+
+
+# ---------------------------------------------------------
+# Agent initialization
+# ---------------------------------------------------------
 
 graph, checkpointer_context = initialize_agent()
 
